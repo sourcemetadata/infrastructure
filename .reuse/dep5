@@ -4,6 +4,9 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Files:
  .terraform/plugins/*/lock.json
  .terraform/terraform.tfstate
+# IDEA project files should not contain
+# any creative (non-trivial) settings
+ .idea/*
 Copyright: ©  Basil Peace
 # CAVEAT:
 # While these files are required to build software,
