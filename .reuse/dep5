@@ -1,0 +1,16 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+# Standard generated files
+Files:
+ .terraform/plugins/*/lock.json
+ .terraform/terraform.tfstate
+Copyright: ©  Basil Peace
+# CAVEAT:
+# While these files are required to build software,
+# they can be regenerated from sources. Under the terms of GPL
+# (if we use it) they won't constitute corresponding source.
+# So, we dedicate them to public domain as much as possible
+# under applicable law.
+# If court of law considers these files as uncopyrightable
+# then there will be no harm
+License: CC0-1.0
