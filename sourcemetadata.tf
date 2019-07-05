@@ -96,6 +96,34 @@ resource "cloudflare_record" "mail" {
   priority = 10
 }
 
+resource "cloudflare_record" "mail_subdomain" {
+  domain = "sourcemetadata.org"
+  name = "mail"
+  type = "CNAME"
+  value = "domain.mail.yandex.net"
+}
+
+resource "cloudflare_record" "yandex_mail_dkim" {
+  domain = "sourcemetadata.org"
+  name = "mail._domainkey"
+  type = "TXT"
+  value = "v=DKIM1; k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC0Vyiv7feOJRZWIJcVv03666ZDVqBELZ9BMaoJQ3ga6vQbNu3cJFXsWYS7h/seEU26tjUV3+9oq/YZJPk9lnFfoM0u/tciyaCSTRcIEFylk1Cbm1pX3ey9yms1sYTKpd6bjqLbnqDEMUrMpRwFybsCGkkc5hyVTkWLQvIzQog7BQIDAQAB"
+}
+
+resource "cloudflare_record" "spf_txt" {
+  domain = "sourcemetadata.org"
+  name = "@"
+  type = "TXT"
+  value = "v=spf1 redirect=_spf.yandex.net"
+}
+
+resource "cloudflare_record" "spf" {
+  domain = "sourcemetadata.org"
+  name = "@"
+  type = "SPF"
+  value = "v=spf1 redirect=_spf.yandex.net"
+}
+
 resource "cloudflare_record" "github_verify_domain" {
   domain = "sourcemetadata.org"
   name = "_github-challenge-sourcemetadata.sourcemetadata.org."
