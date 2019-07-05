@@ -83,9 +83,9 @@ resource "cloudflare_record" "CAA_mailto_2" {
 
 resource "cloudflare_record" "yandex_mail_verification" {
   domain = "sourcemetadata.org"
-  name = "yandex-verification"
+  name = "sourcemetadata.org"
   type = "TXT"
-  value = "e9bacdecb69b7eaa"
+  value = "yandex-verification: e9bacdecb69b7eaa"
 }
 
 resource "cloudflare_record" "mail" {
